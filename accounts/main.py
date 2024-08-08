@@ -1,12 +1,12 @@
 from urllib3.exceptions import MaxRetryError
 
-from .FakeData import FakeData
-from .smsActivate import SMSActivate
-from .RuCaptcha import RuCaptcha
-from .SeleniumCore import Selenium, NotFoundInputException
+from .fake_data import FakeData
+from .sms_activate import SMSActivate
+from .ru_captcha import RuCaptcha
+from .selenium_core import Selenium, NotFoundInputException
 import time
 from .statuses import Profile, Sex
-from constants import RUCAPTCHA_KEY, SMS_ACTIVATE_KEY, PROXY
+from main.constants import RUCAPTCHA_KEY, SMS_ACTIVATE_KEY, PROXY
 from .utils import convert_sex_to_gender
 import json
 import logging

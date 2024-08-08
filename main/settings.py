@@ -4,11 +4,13 @@ from pathlib import Path
 
 from celery.schedules import crontab
 
+from . import constants
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-SECRET_KEY = 'django-insecure-u^+(ne$8i3qin2fm6%5zzja13jyg7lgvrb!ktlo@a5-82*#pv-'
+SECRET_KEY = constants.SECRET_KEY
 
 DEBUG = True
 
@@ -23,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 
 DATABASES = {

@@ -5,7 +5,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from fake_useragent import UserAgent
 import random
-from constants import DEBUG
+from main.constants import DEBUG
 
 class NotFoundInputException(Exception):
     pass
