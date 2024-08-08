@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация аккаунтов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #df51cc;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            width: 105%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b4179f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #df51cc;
+        }
+        .success-message {
+            margin-top: 20px;
+            color: green;
+        }
+        .link {
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+            color: #fabfdf;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация аккаунтов</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="count">Количество аккаунтов:</label>
+            <input type="text" id="count" name="count" aria-label="Введите количество" />
+            
+            <label for="sex">Пол:</label>
+            <select id="sex" name="sex" title="Select your gender" aria-label="Select your gender">
+                <option value="MALE">Мужчина</option>
+                <option value="FEMALE">Женщина</option>
+            </select>
+            
+            <button type="submit">Выполнить</button>
+        </form>
+        
+        {% if request.method == "POST" %}
+            <p class="success-message">Успешно: {{ success }}</p>
+        {% endif %}
+        
+        <a href="/buy" class="link">Покупки</a>
+    </div>
+</body>
+</html>
