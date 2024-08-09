@@ -1,5 +1,5 @@
 import requests
-from .statuses import FDGender, FDResponse
+from .dataclasses import FDGender, FDResponse
 
 class FakeData:
     @staticmethod

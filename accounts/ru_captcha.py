@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 from python_rucaptcha.image_captcha import ImageCaptcha
 
-from .statuses import CaptchaAnswer
+from .dataclasses import CaptchaAnswer
 
 class RuCaptcha:
     @staticmethod

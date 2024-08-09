@@ -5,7 +5,7 @@ from .sms_activate import SMSActivate
 from .ru_captcha import RuCaptcha
 from .selenium_core import Selenium, NotFoundInputException
 import time
-from .statuses import Profile, Sex
+from .dataclasses import Profile, Sex
 from main.constants import RUCAPTCHA_KEY, SMS_ACTIVATE_KEY, PROXY
 from .utils import convert_sex_to_gender
 import json

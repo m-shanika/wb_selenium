@@ -1,5 +1,5 @@
 from accounts.models import Accounts
-from .statuses import Sex, FDGender
+from .dataclasses import Sex, FDGender
 
 def convert_sex_to_gender(sex: Sex):
     if sex == Sex.MALE:
